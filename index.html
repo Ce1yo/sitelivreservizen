@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Images</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="slider-container">
+            <!-- Flèches de navigation -->
+            <div class="floating-arrows">
+                <button class="arrow-btn prev-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="arrow-btn next-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="slider">
+                <div class="slide active">
+                    <img src="page1.jpg" alt="Page 1">
+                    <div class="slide-overlay">
+                        <div class="next-hint">
+                            <span class="hint-text">Suivant</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="page2.jpg" alt="Page 2">
+                    <div class="slide-overlay">
+                        <div class="next-hint">
+                            <span class="hint-text">Suivant</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="page3.jpg" alt="Page 3">
+                    <div class="slide-overlay">
+                        <div class="next-hint">
+                            <span class="hint-text">Suivant</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="page4.jpg" alt="Page 4">
+                </div>
+            </div>
+
+            <!-- Points de navigation améliorés -->
+            <div class="navigation">
+                <div class="nav-wrapper">
+                    <button class="nav-dot active" data-slide="0">
+                        <span class="dot-label">1</span>
+                    </button>
+                    <button class="nav-dot" data-slide="1">
+                        <span class="dot-label">2</span>
+                    </button>
+                    <button class="nav-dot" data-slide="2">
+                        <span class="dot-label">3</span>
+                    </button>
+                    <button class="nav-dot" data-slide="3">
+                        <span class="dot-label">4</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Compteur de pages stylisé -->
+            <div class="page-counter">
+                <span class="current">1</span>
+                <div class="counter-divider"></div>
+                <span class="total">4</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
