@@ -150,6 +150,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     });
     
+    // Gestion de l'affichage en plein écran
+    const modal = document.querySelector('.fullscreen-modal');
+    const modalImg = document.querySelector('.fullscreen-image');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Ouvrir la modal au clic sur une image
+    slides.forEach(slide => {
+        const img = slide.querySelector('img');
+        if (img) {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Empêcher le scroll
+            });
+        }
+    });
+
+    // Fermer la modal
+    const closeFullscreen = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Réactiver le scroll
+    };
+
+    closeModal.addEventListener('click', closeFullscreen);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeFullscreen();
+        }
+    });
+
+    // Fermer avec la touche Echap
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeFullscreen();
+        }
+    });
+
     // Initialiser
     init();
 });
